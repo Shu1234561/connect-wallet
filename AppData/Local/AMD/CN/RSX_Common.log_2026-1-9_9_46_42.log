@@ -1,0 +1,122 @@
+2026-01-09::09:46:42::773	GetEligibleDriverDetailsSize                      :56  		Get eligible drivers Size started---------------------
+
+2026-01-09::09:46:42::797	ADDL::getURLVersionJSON                           :2187	DEBUG	No Server Ip found
+
+2026-01-09::09:46:42::797	ADDL::getURLVersionJSON                           :2198	DEBUG	No Servertype found
+
+2026-01-09::09:46:42::801	ADDL::isVersionCompatible                         :751 	DEBUG	Inside local version.json parser
+
+2026-01-09::09:46:42::802	getNewComponentsDetailsJsonURL                    :35  	DEBUG	No Server Ip found
+
+2026-01-09::09:46:42::802	ADDL::isVersionCompatible                         :866 	DEBUG	Downloading a file from server: . Download destination: C:\Users\SHUBHAM\AppData\Local//AMD_Common//addl_details.json
+
+2026-01-09::09:46:42::802	getNewComponentsDetailsJsonURL                    :43  	DEBUG	No Servertype found
+
+2026-01-09::09:46:42::807	performNewComponentsJsonDownload                  :2039	DEBUG	Successfully waited for new data
+
+2026-01-09::09:46:42::807	getNewComponentsDetailsJsonURL                    :35  	DEBUG	No Server Ip found
+
+2026-01-09::09:46:42::807	getNewComponentsDetailsJsonURL                    :43  	DEBUG	No Servertype found
+
+2026-01-09::09:46:42::807	ADDL::checkURLFormat                              :74  	DEBUG	No serverIp is found
+
+2026-01-09::09:46:42::807	ADDL::isVersionCompatible                         :986 	DEBUG	 addl version : 1.000000  --- dll has 1.000000 
+
+2026-01-09::09:46:42::807	ADDL::validateInput                               :225 	DEBUG	 common library version  is compatible 
+
+2026-01-09::09:46:42::807	ADDL::fillBuildInfoDetails                        :130 	DEBUG	Entered fillBuildInfo function to get the system and build details
+
+2026-01-09::09:46:42::807	GetEligibleDriverDetailsSize                      :76  	DEBUG	BuildInfo details : is_consumer - 1, is_workstation - 0, is_win10 - 1, is_win7 - 0, is_legacy_eligible - 0,   isIcafe - 0, isFalcon - 0
+
+2026-01-09::09:46:42::807	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1607	DEBUG	hconnet - /drivers/installer/json/NewComponents.json
+
+2026-01-09::09:46:42::807	GetEligibleDriverDetailsSize                      :227 		INSIDE CONSUMER
+
+2026-01-09::09:46:42::807	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1617	DEBUG	Setting INTERNET_OPTION_RECEIVE_TIMEOUT to 90000 milliseconds: Result = 1 0
+
+2026-01-09::09:46:42::807	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1621	DEBUG	Setting INTERNET_OPTION_SEND_TIMEOUT to 30000 milliseconds: Result = 1 0
+
+2026-01-09::09:46:42::807	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1623	DEBUG	Setting INTERNET_OPTION_RECEIVE_TIMEOUT to 30000 milliseconds: Result = 1 0
+
+2026-01-09::09:46:42::811	ADDL::ParseJSONfile                               :385 	DEBUG	file under checking C:\Users\SHUBHAM\AppData\Local//AMD_Common//DrvDldDetails_Consumer_WHQL_Win11.json
+
+2026-01-09::09:46:42::811	ADDL::checkDownloadAccelaratorEligibility         :2352	DEBUG	Download Acceleration is eligible since the physical disk is an SSD and the CPU core count is >= 4
+
+2026-01-09::09:46:42::815	ADDL::fillDriverInfoDetails                       :287 	DEBUG	No drivers found in the JSON file
+
+2026-01-09::09:46:42::815	GetEligibleDriverDetailsSize                      :323 	DEBUG	Get eligible drivers size function ended
+
+2026-01-09::09:46:42::815	GetEligibleDriverDetailsSize                      :330 	DEBUG	No AMD hardware found
+
+2026-01-09::09:46:44::310	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1660	DEBUG	Filesize of NewComponents.json is 25283. Modified 2025-12-16 14:37:50.000 UTC
+
+2026-01-09::09:46:44::311	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1696	DEBUG	Filesize of NewComponents.json is 25283. Modified 2025-12-16 14:37:50.000 UTC
+
+2026-01-09::09:46:44::311	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1700	DEBUG	Cached file up to date
+
+2026-01-09::09:46:44::335	IsSmartBlurAvailableIMPL                          :2207		CheckIfToolIsAvaliable for AMD PrivacyView
+
+2026-01-09::09:46:44::335	AdditionalApplications::CheckIfToolIsAvaliable    :665 		Check for display driver: 23 19 12 3
+
+2026-01-09::09:46:44::335	AdditionalApplications::CheckIfToolIsAvaliable    :666 		min required driver: 22 10 0 0
+
+2026-01-09::09:46:44::335	AdditionalApplications::CheckIfToolIsAvaliable    :667 		max required driver: 99 99 65535 65535
+
+2026-01-09::09:46:48::062	getNewComponentsDetailsJsonURL                    :35  	DEBUG	No Server Ip found
+
+2026-01-09::09:46:48::062	getNewComponentsDetailsJsonURL                    :43  	DEBUG	No Servertype found
+
+2026-01-09::09:46:48::082	IsSmartBlurAvailableIMPL                          :2207		CheckIfToolIsAvaliable for AMD PrivacyView
+
+2026-01-09::09:46:48::082	AdditionalApplications::CheckIfToolIsAvaliable    :665 		Check for display driver: 23 19 12 3
+
+2026-01-09::09:46:48::082	AdditionalApplications::CheckIfToolIsAvaliable    :666 		min required driver: 22 10 0 0
+
+2026-01-09::09:46:48::083	AdditionalApplications::CheckIfToolIsAvaliable    :667 		max required driver: 99 99 65535 65535
+
+2026-01-09::09:46:55::522	getNewComponentsDetailsJsonURL                    :35  	DEBUG	No Server Ip found
+
+2026-01-09::09:46:55::522	getNewComponentsDetailsJsonURL                    :43  	DEBUG	No Servertype found
+
+2026-01-09::09:46:55::543	IsSmartBlurAvailableIMPL                          :2207		CheckIfToolIsAvaliable for AMD PrivacyView
+
+2026-01-09::09:46:55::543	AdditionalApplications::CheckIfToolIsAvaliable    :665 		Check for display driver: 23 19 12 3
+
+2026-01-09::09:46:55::543	AdditionalApplications::CheckIfToolIsAvaliable    :666 		min required driver: 22 10 0 0
+
+2026-01-09::09:46:55::543	AdditionalApplications::CheckIfToolIsAvaliable    :667 		max required driver: 99 99 65535 65535
+
+2026-01-12::22:32:50::182	getNewComponentsDetailsJsonURL                    :35  	DEBUG	No Server Ip found
+
+2026-01-12::22:32:50::195	getNewComponentsDetailsJsonURL                    :43  	DEBUG	No Servertype found
+
+2026-01-12::22:32:50::215	performNewComponentsJsonDownload                  :2039	DEBUG	Successfully waited for new data
+
+2026-01-12::22:32:50::228	getNewComponentsDetailsJsonURL                    :35  	DEBUG	No Server Ip found
+
+2026-01-12::22:32:50::228	getNewComponentsDetailsJsonURL                    :43  	DEBUG	No Servertype found
+
+2026-01-12::22:32:50::253	ADDL::checkURLFormat                              :74  	DEBUG	No serverIp is found
+
+2026-01-12::22:32:50::257	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1607	DEBUG	hconnet - /drivers/installer/json/NewComponents.json
+
+2026-01-12::22:32:50::257	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1617	DEBUG	Setting INTERNET_OPTION_RECEIVE_TIMEOUT to 90000 milliseconds: Result = 1 0
+
+2026-01-12::22:32:50::264	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1621	DEBUG	Setting INTERNET_OPTION_SEND_TIMEOUT to 30000 milliseconds: Result = 1 0
+
+2026-01-12::22:32:50::264	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1623	DEBUG	Setting INTERNET_OPTION_RECEIVE_TIMEOUT to 30000 milliseconds: Result = 1 0
+
+2026-01-12::22:32:52::953	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1660	DEBUG	Filesize of NewComponents.json is 25283. Modified 2025-12-16 14:37:50.000 UTC
+
+2026-01-12::22:32:53::360	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1696	DEBUG	Filesize of NewComponents.json is 25283. Modified 2025-12-16 14:37:50.000 UTC
+
+2026-01-12::22:32:53::360	ADDL::downloadFileFromInternetIfUpdateAvaliable   :1700	DEBUG	Cached file up to date
+
+2026-01-12::22:32:53::466	IsSmartBlurAvailableIMPL                          :2207		CheckIfToolIsAvaliable for AMD PrivacyView
+
+2026-01-12::22:32:53::468	AdditionalApplications::CheckIfToolIsAvaliable    :665 		Check for display driver: 23 19 12 3
+
+2026-01-12::22:32:53::468	AdditionalApplications::CheckIfToolIsAvaliable    :666 		min required driver: 22 10 0 0
+
+2026-01-12::22:32:53::470	AdditionalApplications::CheckIfToolIsAvaliable    :667 		max required driver: 99 99 65535 65535
+
