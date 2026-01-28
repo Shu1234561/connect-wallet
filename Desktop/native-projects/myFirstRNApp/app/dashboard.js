@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { BarChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ArrowIcon, CancelledIcon, DeliveredIcon, DeliveryBoyIcon, ExportIcon, IntransitIcon, LocationIcon, LogoIcon, NotificationIcon, OrderIcon } from "../constants/icons";
@@ -20,6 +20,7 @@ const barData = [
 
 export default function Dashboard(){
   const [activeCard, setActiveCard] = useState(null);
+  const [trackModalVisible, setTrackModalVisible] = useState(false);
 
     return(
         <SafeAreaView style={styles.container}>
@@ -94,7 +95,10 @@ export default function Dashboard(){
                     </View>
 
                     <View style={styles.trackSecondBox}>
-                        <TouchableOpacity style={styles.trackBtn}>
+                        <TouchableOpacity 
+                          style={styles.trackBtn} 
+                          onPress={() => setTrackModalVisible(true)}
+                        >
                             <Text style={styles.trackBtnText}>Track</Text>
                             <Image source={ArrowIcon} style={styles.arrowIcon}/>
                         </TouchableOpacity>
@@ -159,6 +163,45 @@ export default function Dashboard(){
 
             </View>
             </ScrollView>
+
+            {/* Tracking Modal */}
+            <Modal
+              transparent
+              animationType="fade"
+              visible={trackModalVisible}
+              onRequestClose={() => setTrackModalVisible(false)}
+            >
+              <View style={styles.modalOverlay}>
+                <View style={styles.modalBox}>
+                  {/* Title */}
+                  <Text style={styles.modalTitle}>Track Consignment</Text>
+                  <Text style={styles.modalSub}>
+                    Enter The E-waybill No. To Track Consignment
+                  </Text>
+            
+                  {/* Input */}
+                  <TextInput
+                    placeholder="Enter Order ID Or Tracking No......"
+                    placeholderTextColor="#F37938"
+                    style={styles.modalInput}
+                  />
+            
+                  {/* Track Button */}
+                  <TouchableOpacity style={styles.modalTrackBtn}>
+                    <Text style={styles.modalTrackText}>Track</Text>
+                  </TouchableOpacity>
+            
+                  {/* Close */}
+                  <TouchableOpacity
+                    style={styles.modalClose}
+                    onPress={() => setTrackModalVisible(false)}
+                  >
+                    <Text style={styles.modalCloseText}>✕</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </Modal>
+
         </SafeAreaView>
     )
 }
@@ -608,4 +651,76 @@ detailsBtnText: {
   fontSize: 15,
   fontWeight: "700",
 },
+
+// Modal styling
+modalOverlay: {
+  flex: 1,
+  backgroundColor: "rgba(0,0,0,0.45)",
+  justifyContent: "center",
+  alignItems: "center",
+},
+
+modalBox: {
+  width: "90%",
+  backgroundColor: "#FFFFFF",
+  borderRadius: 16,
+  padding: 20,
+
+  shadowColor: "#000",
+  shadowOffset: { width: 0, height: 10 },
+  shadowOpacity: 0.25,
+  shadowRadius: 20,
+  elevation: 15,
+},
+
+modalTitle: {
+  fontSize: 22,
+  fontWeight: "700",
+  color: "#F37938",
+},
+
+modalSub: {
+  marginTop: 8,
+  fontSize: 14,
+  color: "#2D2D2D",
+},
+
+modalInput: {
+  marginTop: 18,
+  borderWidth: 1.5,
+  borderColor: "#F37938",
+  borderRadius: 30,
+  paddingHorizontal: 18,
+  height: 48,
+  fontSize: 14,
+  color: "#000",
+},
+
+modalTrackBtn: {
+  marginTop: 24,
+  backgroundColor: "#F37938",
+  paddingVertical: 14,
+  borderRadius: 10,
+  alignItems: "center",
+  width:85,
+  marginHorizontal:"auto",
+},
+
+modalTrackText: {
+  color: "#FFFFFF",
+  fontSize: 16,
+  fontWeight: "700",
+},
+
+modalClose: {
+  position: "absolute",
+  top: 10,
+  right: 12,
+},
+
+modalCloseText: {
+  fontSize: 18,
+  color: "#000",
+},
+
 })
