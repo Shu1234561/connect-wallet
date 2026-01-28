@@ -85,8 +85,8 @@
             "installer_id": "",
             "is_appforlink": "TRUE",
             "is_favourite": "FALSE",
-            "last_played_mins": 26,
-            "lastlaunchtime": "Wed Nov 26 09:59:30 2025",
+            "last_played_mins": 198,
+            "lastlaunchtime": "Tue Jan 27 15:16:40 2026",
             "lastperformancereporttime": "",
             "lnk_path": "",
             "manual": "FALSE",
@@ -104,7 +104,7 @@
             "special_flags": "link",
             "steam_id": -1,
             "title": "Microsoft Word",
-            "total_played_mins": 40994,
+            "total_played_mins": 41502,
             "uninstall_location": -1,
             "uninstalled": "FALSE",
             "uplay_id": -1,
@@ -114,7 +114,7 @@
             "upscaling_use_borderless": "FALSE",
             "useEyefinity": "FALSE",
             "userprofiletype": -1,
-            "week_played_mins": 0
+            "week_played_mins": 508
         },
         {
             "amdId": 1464,
@@ -356,7 +356,7 @@
             "is_appforlink": "TRUE",
             "is_favourite": "FALSE",
             "last_played_mins": 0,
-            "lastlaunchtime": "Wed Jan 21 09:35:05 2026",
+            "lastlaunchtime": "Wed Jan 28 09:33:07 2026",
             "lastperformancereporttime": "",
             "lnk_path": "",
             "manual": "FALSE",
@@ -374,7 +374,7 @@
             "special_flags": "link",
             "steam_id": -1,
             "title": "Spotify",
-            "total_played_mins": 0,
+            "total_played_mins": 19512,
             "uninstall_location": -1,
             "uninstalled": "FALSE",
             "uplay_id": -1,
@@ -384,10 +384,10 @@
             "upscaling_use_borderless": "FALSE",
             "useEyefinity": "FALSE",
             "userprofiletype": -1,
-            "week_played_mins": 0
+            "week_played_mins": 2190
         }
     ],
-    "lst_dtc_tsmp_high": 31230603,
-    "lst_dtc_tsmp_low": 1392840512,
+    "lst_dtc_tsmp_high": 31232011,
+    "lst_dtc_tsmp_low": 1930597744,
     "lst_rsch_data_release": 2
 }

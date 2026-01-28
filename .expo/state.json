@@ -1,4 +1,10 @@
 {
   "analyticsDeviceId": "73ebc262-1862-46f1-bcd3-7d2eb8e5e143",
-  "uuid": "34bf8f33-8368-4803-a700-f0d0a21b23d7"
+  "uuid": "34bf8f33-8368-4803-a700-f0d0a21b23d7",
+  "auth": {
+    "sessionSecret": "{\"id\":\"14340141-90d9-4b51-b9c8-c98a7f5cf717\",\"version\":1,\"expires_at\":2084572800000}",
+    "userId": "8d8a7822-5cc7-4420-aac0-2797585d574d",
+    "username": "shubham2000",
+    "currentConnection": "Username-Password-Authentication"
+  }
 }

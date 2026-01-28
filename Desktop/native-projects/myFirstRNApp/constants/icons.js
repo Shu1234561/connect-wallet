@@ -1,15 +1,33 @@
+import SavedAddressIcon from "../assets/projectImages/AddressIcon.png";
 import ArrowIcon from "../assets/projectImages/Arrow.png";
+import AvatarIcon from "../assets/projectImages/Avatar.png";
+import BlackTickIcon from "../assets/projectImages/Black_Tick_Icon.png";
 import CancelledIcon from "../assets/projectImages/cancleIcon.png";
+import DeleteIcon from "../assets/projectImages/DeleteIcon.png";
 import DeliveredIcon from "../assets/projectImages/DeliveredIcon.png";
 import DeliveryBoyIcon from "../assets/projectImages/delivery boy on scooter.png";
+import DomeyIcon from "../assets/projectImages/domey.png";
 import ExportIcon from "../assets/projectImages/Export.png";
+import FilterIcon from "../assets/projectImages/Filter.png";
+import GrayTickIcon from "../assets/projectImages/Gray_Tick_Icon.png";
 import IntransitIcon from "../assets/projectImages/inTransitIcon.png";
+import LeftArrowIcon from "../assets/projectImages/LeftArrow.png";
 import LocationIcon from "../assets/projectImages/Location.png";
 import LogoIcon from "../assets/projectImages/logo.png";
+import LogoutIcon from "../assets/projectImages/Logout.png";
+import NoNotificationIcon from "../assets/projectImages/NoNotification.png";
 import NotificationIcon from "../assets/projectImages/notification.png";
+import OrangeFilterIcon from "../assets/projectImages/OrangeFilterIcon.png";
 import OrderIcon from "../assets/projectImages/orderIcon.png";
+import OrderProfileIcon from "../assets/projectImages/orderProfileIcon.png";
+import ReportIcon from "../assets/projectImages/ReportIcon.png";
+import ReviewIcon from "../assets/projectImages/reviewIcon.png";
 import RightArrowIcon from "../assets/projectImages/RightArrow.png";
+import RightGrayArrowIcon from "../assets/projectImages/RightGrayIcon.png";
 import SuccessIcon from "../assets/projectImages/success.png";
+import HelpIcon from "../assets/projectImages/SupportIcon.png";
+import TandCIcon from "../assets/projectImages/tancIcon.png";
+import TrashIcon from "../assets/projectImages/trash.png";
 
-export { ArrowIcon, CancelledIcon, DeliveredIcon, DeliveryBoyIcon, ExportIcon, IntransitIcon, LocationIcon, LogoIcon, NotificationIcon, OrderIcon, RightArrowIcon, SuccessIcon };
+export { ArrowIcon, AvatarIcon, BlackTickIcon, CancelledIcon, DeleteIcon, DeliveredIcon, DeliveryBoyIcon, DomeyIcon, ExportIcon, FilterIcon, GrayTickIcon, HelpIcon, IntransitIcon, LeftArrowIcon, LocationIcon, LogoIcon, LogoutIcon, NoNotificationIcon, NotificationIcon, OrangeFilterIcon, OrderIcon, OrderProfileIcon, ReportIcon, ReviewIcon, RightArrowIcon, RightGrayArrowIcon, SavedAddressIcon, SuccessIcon, TandCIcon, TrashIcon };
 

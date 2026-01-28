@@ -1,7 +1,9 @@
+import { router } from "expo-router";
 import { useState } from "react";
 import { Image, Modal, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { BarChart } from 'react-native-gifted-charts';
 import { SafeAreaView } from "react-native-safe-area-context";
+import DeliveryCard from "../components/DeliveryCard";
 import { ArrowIcon, CancelledIcon, DeliveredIcon, DeliveryBoyIcon, ExportIcon, IntransitIcon, LocationIcon, LogoIcon, NotificationIcon, OrderIcon } from "../constants/icons";
 
 const barData = [
@@ -23,19 +25,28 @@ export default function Dashboard(){
   const [trackModalVisible, setTrackModalVisible] = useState(false);
 
     return(
+      <>
         <SafeAreaView style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-             {/* 🔝 Header */}
-            <View style={styles.header}>
-                <Image
-                    source={LogoIcon}
-                    style={styles.logo}
-                />
-              <TouchableOpacity style={styles.bookBtn}>
-                <Text style={styles.bookBtnText}>Book Courier</Text>
-              </TouchableOpacity>
+            {/* 🔝 Header */}
+            <View style={styles.headerWrapper}>
+              <View style={styles.header}>
+                <TouchableOpacity onPress={() => router.push("/profile")}>
+                <Image source={LogoIcon} style={styles.logo} />
+                </TouchableOpacity>
+            
+                <TouchableOpacity
+                  style={styles.bookBtn}
+                  onPress={() => router.push("/createOrder")}
+                >
+                  <Text style={styles.bookBtnText}>Book Courier</Text>
+                </TouchableOpacity>
+              </View>
+            
+              {/* 👇 shadow MUST be outside header */}
+              <View style={styles.bottomShadow} />
             </View>
 
+            <ScrollView showsVerticalScrollIndicator={false}>
             {/* Body */}
             <View style={styles.body}>
 
@@ -44,10 +55,12 @@ export default function Dashboard(){
                 <View style={styles.searchBox}>
                   <TextInput placeholder="Enter Location..." style={styles.searchInput} />   
                 </View>
+                <TouchableOpacity onPress={() => router.push("/notification")}>
                   <Image
-                       source={NotificationIcon}
-                       style={styles.notiIcon}
-                   />
+                    source={NotificationIcon}
+                    style={styles.notiIcon}
+                  />
+                </TouchableOpacity>
                 </View>
 
                 {/* Stats Cards */}
@@ -110,7 +123,7 @@ export default function Dashboard(){
                 <View style={styles.box}>
                   <View style={styles.progressHeader}>
                     <Text style={styles.progressTitle}>Overall Progress</Text>
-                    <TouchableOpacity style={styles.exportBox}>
+                    <TouchableOpacity style={styles.exportBox} onPress={() => router.push("/myOrders")}>
                       <Image source={ExportIcon} style={styles.exportIcon}/>
                       <Text style={styles.exportTitle}>Export</Text>
                     </TouchableOpacity>
@@ -151,7 +164,7 @@ export default function Dashboard(){
                 <View style={styles.box}>
                   <View style={styles.progressHeader}>
                     <Text style={styles.deliveryTitle}>Delivery Details</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => router.push("/deliveryDetails")}>
                       <Text style={styles.viewAll}>View all</Text>
                     </TouchableOpacity>
                   </View>
@@ -203,6 +216,7 @@ export default function Dashboard(){
             </Modal>
 
         </SafeAreaView>
+      </>
     )
 }
 
@@ -237,59 +251,6 @@ const Legend = ({ color, label }) => (
   </View>
 );
 
-const DeliveryCard = ({ status }) => {
-  const isDelivered = status === "Delivered";
-
-  return (
-    <View style={[styles.deliveryCard]}>
-      {/* Row 1 */}
-      <View style={styles.rowBetween}>
-        <Text style={styles.orderId}>
-          Order ID <Text style={styles.orderIdBlue}>#596</Text>
-        </Text>
-        <Text style={styles.amount}>₹ 500.00</Text>
-      </View>
-
-      {/* Row 2 */}
-      <Text style={styles.tracking}>
-        Tracking : <Text style={styles.trackingBlue}>BC2061146087</Text>
-      </Text>
-
-      {/* Row 3 */}
-      <View style={styles.rowBetween}>
-        <View style={styles.statusRow}>
-          <Text style={styles.statusLabel}>Status :</Text>
-          <View
-            style={[
-              styles.statusPill,
-              {
-                backgroundColor: isDelivered ? "#5BB8342E" : "#E6E8F0",
-              },
-            ]}
-          >
-            <Text
-              style={[
-                styles.statusText,
-                { color: isDelivered ? "#267F00" : "#3C4A69" },
-              ]}
-            >
-              {status}
-            </Text>
-          </View>
-        </View>
-
-        <Text style={styles.date}>19 Jan 2026</Text>
-      </View>
-
-      {/* Button */}
-      <TouchableOpacity style={styles.detailsBtn}>
-        <Text style={styles.detailsBtnText}>Visit Details</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -302,25 +263,26 @@ const styles = StyleSheet.create({
     paddingBottom:20,
   },
 
+  headerWrapper: {
+    backgroundColor: "#FFFFFF",
+  },
   header: {
-    // marginTop: 10,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-  
     paddingHorizontal: 19,
     paddingVertical: 10,
-    // borderRadius: 14,
-    backgroundColor: "#FFFFFF", // 🔴 REQUIRED for shadow
+    backgroundColor: "#FFFFFF",
+    zIndex: 2,
+  },
   
-    // 👇 BOTTOM-ONLY SHADOW
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 }, // only downward
-    shadowOpacity: 0.03,
-    shadowRadius: 6,
-  
-    // Android shadow
-    elevation: 8,
+  bottomShadow: {
+    height: 5,              // controls shadow depth
+    marginHorizontal: 12,    // prevents side shadow
+    backgroundColor: "#000",
+    opacity: 0.06,
+    borderRadius: 16,
+    transform: [{ scaleY: 0.6 }],
   },
 
   logo: {
@@ -552,105 +514,6 @@ const styles = StyleSheet.create({
     color:"#133E87",
     textDecorationLine: "underline"
   },
-
-  deliveryCard:{
-    marginTop: 9,  
-    paddingHorizontal: 14,
-    paddingVertical: 9,
-    borderRadius:16,
-    backgroundColor: "#FFFFFF",
-    flexDirection:"column",
-    
-    justifyContent:"space-between",
-    gap:12,
-  
-    // 👇 BOTTOM-ONLY SHADOW
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 9 }, // only downward
-    shadowOpacity: 0.03,
-    shadowRadius: 6,
-  
-    // Android shadow
-    elevation: 8,
-  },
-
-rowBetween: {
-  flexDirection: "row",
-  justifyContent: "space-between",
-  alignItems: "center",
-},
-
-orderId: {
-  fontSize: 15,
-  fontWeight: "500",
-  color: "#000921",
-},
-
-orderIdBlue: {
-  color: "#3A55A6",
-  fontWeight: "700",
-},
-
-amount: {
-  fontSize: 16,
-  fontWeight: "700",
-  color: "#000921",
-},
-
-tracking: {
-  marginTop: 8,
-  fontSize: 14,
-  color: "#000921",
-},
-
-trackingBlue: {
-  color: "#3A55A6",
-  fontWeight: "600",
-},
-
-statusRow: {
-  flexDirection: "row",
-  alignItems: "center",
-  gap: 8,
-},
-
-statusLabel: {
-  fontSize: 16,
-  fontWeight: "700",
-  color: "#1E3A8A",
-},
-
-statusPill: {
-  paddingHorizontal: 16,
-  paddingVertical: 6,
-  borderRadius: 20,
-},
-
-statusText: {
-  fontSize: 14,
-  fontWeight: "600",
-},
-
-date: {
-  fontSize: 14,
-  fontWeight: "600",
-  color: "#000921",
-},
-
-detailsBtn: {
-  marginTop: 14,
-  borderWidth: 1.5,
-  borderColor: "#F37938",
-  paddingVertical: 14,
-  borderRadius: 8,
-  alignItems: "center",
-},
-
-detailsBtnText: {
-  color: "#F37938",
-  fontSize: 15,
-  fontWeight: "700",
-},
 
 // Modal styling
 modalOverlay: {
